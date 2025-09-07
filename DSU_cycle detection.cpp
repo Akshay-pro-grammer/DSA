@@ -11,6 +11,9 @@ class Solution {
     void uniond(int i,int j,vector<int>&parent,vector<int>&rank){
         int parenti=find(i,parent);
         int parentj=find(j,parent);
+        if(parenti==parentj){
+            return;
+        }
         if(rank[parenti]>rank[parentj]){
             parent[parentj]=parenti;    
         }else if(rank[parenti]<rank[parentj]){
